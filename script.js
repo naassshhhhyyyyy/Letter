@@ -1,3 +1,12 @@
+// Define the target date
+const targetDate = new Date('2025-01-01T00:00:00');
+
+// Function to check if the current date is on or after the target date
+function isDateValid() {
+    const currentDate = new Date();
+    return currentDate >= targetDate;
+}
+
 // Function to create hearts
 function createHeart() {
     const heartContainer = document.getElementById('heartContainer');
@@ -17,6 +26,17 @@ function createHeart() {
 
 // Function to toggle the rolled state and visibility of the paper
 function togglePaper() {
+    if (!isDateValid()) {
+        // Format the target date for the notification message
+        const formattedDate = targetDate.toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+        alert(`The letter will be viewable from ${formattedDate}.`);
+        return;
+    }
+    
     const paper = document.getElementById('paper');
     
     if (paper.classList.contains('visible')) {
