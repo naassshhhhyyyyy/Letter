@@ -1,5 +1,5 @@
 // Define the target date
-const targetDate = new Date('2025-01-01T00:00:00');
+const targetDate = new Date('2024-09-01T00:00:00');
 
 // Function to check if the current date is on or after the target date
 function isDateValid() {
